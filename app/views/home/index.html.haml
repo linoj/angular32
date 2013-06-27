@@ -1,2 +1,11 @@
 %h1 Home#index
 %p Find me in app/views/home/index.html.haml
+
+%div{ 'ng-app' => 'hello' }
+  %p
+    Hello {{"World" + "!"}}
+  %div{  ng_controller: 'HelloCntl'}
+    Your name: 
+    %input{ type: 'text', ng_model: 'name', value: 'World' }
+    %hr
+    Hello {{name}}

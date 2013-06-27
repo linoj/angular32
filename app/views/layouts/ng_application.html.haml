@@ -1,0 +1,8 @@
+- content_for :head do
+  = javascript_include_tag "ng_application"
+
+- content_for :content do
+  %div{ 'ng-app' => yield(:ng_app) }
+    = yield
+
+= render template: 'layouts/application'
