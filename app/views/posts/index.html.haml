@@ -1,23 +1,13 @@
 %h1 Listing posts
 
-%table
-  %tr
-    %th Title
-    %th Intro
-    %th Body
-    %th
-    %th
-    %th
+%div{ 'ng-app' => 'posts'}
+  Search:
+  %input{ ng_model: 'query' }
+  %div{ ng_controller: "PostsCntl" }
+    %ul
+      %li{ ng_repeat: "post in posts | filter:query" }
+        {{post.title}}
+        %p {{post.intro}}
 
-  - @posts.each do |post|
-    %tr
-      %td= post.title
-      %td= post.intro
-      %td= post.body
-      %td= link_to 'Show', post
-      %td= link_to 'Edit', edit_post_path(post)
-      %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
 
 = link_to 'New Post', new_post_path
