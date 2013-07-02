@@ -1,6 +1,6 @@
 %h1 Listing posts
 
-%div{ 'ng-app' => 'posts'}
+%div{ 'ng-app' => 'Posts'}
   Search:
   %input{ ng_model: 'query' }
   %div{ ng_controller: "PostsCntl" }
@@ -8,6 +8,7 @@
       %li{ ng_repeat: "post in posts | filter:query" }
         {{post.title}}
         %p {{post.intro}}
+        %div {{post.body}}
 
 
 = link_to 'New Post', new_post_path

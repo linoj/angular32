@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require angular-1.1.5/angular
+//= require angular
+//= require angular-resource
 //= require_tree .
