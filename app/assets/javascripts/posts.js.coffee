@@ -2,23 +2,23 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-app = angular.module 'Posts', []
+# app = angular.module 'Posts', []
 
-app.controller "PostsCntl", @PostsCntl = ($scope, $http) ->
-  $http.get('/posts.json').success (data) ->
-    $scope.posts = data
+# app.controller "PostsCtrl", @PostsCtrl = ($scope, $http) ->
+#   $http.get('/posts.json').success (data) ->
+#     $scope.posts = data
 
-  # $scope.posts = [
-  #   { id: 1, title: "Title 1", intro: "This is posting 1", body: "Body of posting 1" },
-  #   { id: 2, title: "Title 2", intro: "This is posting 2", body: "Body of posting 2" },
-  #   { id: 3, title: "Title 3", intro: "This is posting 3", body: "Body of posting 3" },
-  # ]
+#   # $scope.posts = [
+#   #   { id: 1, title: "Title 1", intro: "This is posting 1", body: "Body of posting 1" },
+#   #   { id: 2, title: "Title 2", intro: "This is posting 2", body: "Body of posting 2" },
+#   #   { id: 3, title: "Title 3", intro: "This is posting 3", body: "Body of posting 3" },
+#   # ]
 
-# app = angular.module 'Posts', ['ngResource']
+app = angular.module 'Posts', ['ngResource']
 
-# app.factory 'Post', ($resource) ->
-#   $resource('/posts/:id', {id: '@id'})
+app.factory 'Post', ($resource) ->
+  $resource('/posts/:id', {id: '@id'})
 
-# app.controller "PostsCntl", @PostsCntl = ($scope, Post) ->
-#   $scope.posts = Post.query()
+app.controller "PostsCtrl", @PostsCtrl = ($scope, Post) ->
+  $scope.posts = Post.query()
 

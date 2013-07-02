@@ -3,7 +3,7 @@
 %div{ 'ng-app' => 'Posts'}
   Search:
   %input{ ng_model: 'query' }
-  %div{ ng_controller: "PostsCntl" }
+  %div{ ng_controller: "PostsCtrl" }
     %ul
       %li{ ng_repeat: "post in posts | filter:query" }
         {{post.title}}
